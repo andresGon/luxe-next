@@ -1,0 +1,86 @@
+.header {
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid #ddd;
+  
+    &__top-bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 20px;
+      background-color: #fff; // Cambiado a blanco
+      border-bottom: 1px solid #ccc; // Agregado borde inferior
+      font-size: 14px;
+      color: #333;
+      font-weight: 700;
+      &__phone,
+      &__collection {
+        
+      }
+    }
+  
+    &__main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 10px 20px;
+    }
+  
+    &__nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      a {
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  
+    &__logo {
+      margin: auto;
+      img {
+        width: 150px; // Ajusta el tamaño máximo del logo según sea necesario
+        height: auto;
+      }
+    }
+  
+    &__icons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+  
+      .header__icon {
+        position: relative;
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+  
+        img {
+          width: 20px;
+          height: 20px;
+        }
+  
+        &:hover {
+          color: #000;
+        }
+  
+        .header__badge {
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          top: -5px;
+          right: -10px;
+          background: #ccc;
+          color: #000;
+          font-size: 11px;
+          font-weight: bold;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
