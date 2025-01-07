@@ -15,10 +15,7 @@ export default async function HomePage() {
   return (
     <>
     <Header />
-    <main className="p-8 flex flex-col items-center gap-6">
-      
-      <h1 className="text-2xl font-bold">Ejemplo de Cards (App Router)</h1>
-
+    <main className="">
       {/* 3) Renderizar múltiples <ProductCard /> según los datos de la DB */}
       {products.map((prod) => {
         // Opcional: si tu campo 'imagenes' es un array, tomamos la primera como principal.
