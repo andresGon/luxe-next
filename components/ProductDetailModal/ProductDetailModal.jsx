@@ -35,7 +35,7 @@ export default function ProductDetailModal({ isOpen, product, onClose }) {
           style={{ position: 'absolute', top: 10, right: 10 }} 
           onClick={onClose}
         >
-          X
+          <img src="/icons/close-icon.svg" alt=""  style={{ width:30}}/>
         </button>
         
         {/* Contenido del producto */}
