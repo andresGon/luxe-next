@@ -35,7 +35,7 @@ const Header = () => {
             <UserButton
               appearance={{
                 elements: {
-                  userButtonAvatarBox: 'w-[30px] h-[30px]', // Ejemplo para controlar tamaño
+                  userButtonAvatarBox: 'w-[20px] h-[20px]', // Ejemplo para controlar tamaño
                 },
               }}
             />
@@ -44,15 +44,16 @@ const Header = () => {
           {/* Si el usuario está firmado (SignedOut), mostramos botón de "Sign In" */}
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="header__icon sign-in-btn">Iniciar Sesión</button>
+              <button className="sign-in-btn">Iniciar Sesión</button>
             </SignInButton>
           </SignedOut>
 
-          {/* Wishlist */}
+          {/* Wishlist 
           <a href="/wishlist" className="header__icon">
             <img src="/icons/user-icon.svg" alt="Like Icon" width="20" height="20" />
             <span className="header__badge">0</span>
           </a>
+          */}
 
           {/* Cart */}
           <a href="/cart" className="header__icon">

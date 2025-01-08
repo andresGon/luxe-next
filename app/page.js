@@ -1,46 +1,32 @@
 // app/page.js
 import dbConnect from '../lib/dbConnect';
 import Producto from '../models/Producto';
-import ProductCard from '../components/ProductCard';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 
+// Importa el componente cliente
+import ProductListClient from '../components/ProductListClient/ProductListClient.jsx';
+
 export default async function HomePage() {
-  // 1) Conectar a la base de datos
+  // Conectar a la base de datos
   await dbConnect();
 
-  // 2) Obtener la lista de productos
-  //    .lean() retorna objetos planos de JavaScript (más eficiente).
-  const products = await Producto.find({}).lean();
+  // Obtener la lista de productos
+  //const products = await Producto.find({}).lean();
+
+
+  //Opción 2: con JSON.parse(JSON.stringify())
+   let products = await Producto.find({});
+   products = JSON.parse(JSON.stringify(products));
 
   return (
     <>
-    <Header />
-    <main className="">
-      {/* 3) Renderizar múltiples <ProductCard /> según los datos de la DB */}
-      {products.map((prod) => {
-        // Opcional: si tu campo 'imagenes' es un array, tomamos la primera como principal.
-        const imageSrc = prod.imagenes && prod.imagenes.length > 0
-          ? prod.imagenes[0]
-          : 'https://via.placeholder.com/300x300'; // fallback si no hay imágenes
-
-        // Construir la etiqueta de descuento, si existe un porcentaje
-        const discountText = prod.porcentaje ? `-${prod.porcentaje}%` : null;
-
-        return (
-          <ProductCard
-            key={prod._id}             // _id de MongoDB como key única
-            imageSrc={imageSrc}
-            name={prod.nombre}
-            price={prod.precio}
-            oldPrice={prod.segundoPrecio}
-            discount={discountText}
-            isHot={prod.masVendido}    // o 'prod.favorito', según tu esquema
-          />
-        );
-      })}
-    </main>
-    <Footer />
+      <Header />
+      <main>
+        {/* Pasamos la data como prop al componente cliente */}
+        <ProductListClient products={products} />
+      </main>
+      <Footer />
     </>
   );
 }
