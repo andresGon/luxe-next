@@ -24,7 +24,7 @@ const Header = () => {
 
         {/* Logo (actualmente comentado en tu código) */}
         <div className="header__logo">
-          {/* <img src={logo} alt="LuxeHabitat Logo" width="100" height="auto" /> */}
+          <img src="/icons/logo.svg" alt="Logo" width="150" height="50" />
         </div>
 
         {/* Iconos (incluyendo Clerk) */}
@@ -50,14 +50,14 @@ const Header = () => {
 
           {/* Wishlist */}
           <a href="/wishlist" className="header__icon">
-            {/* <img src={likeIcon} alt="Like Icon" width="20" height="20" /> */}
-            <span className="header__badge">99</span>
+            <img src="/icons/user-icon.svg" alt="Like Icon" width="20" height="20" />
+            <span className="header__badge">0</span>
           </a>
 
           {/* Cart */}
           <a href="/cart" className="header__icon">
-            {/* <img src={cartIcon} alt="Cart Icon" width="20" height="20" /> */}
-            <span className="header__badge">99</span>
+            <img src="/icons/cart-icon.svg" alt="Cart Icon" width="20" height="20" />
+            <span className="header__badge">0</span>
           </a>
 
         </div>

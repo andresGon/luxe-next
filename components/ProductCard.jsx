@@ -9,7 +9,7 @@ function ProductCard({
   isHot        // Boolean para mostrar la etiqueta "Hot"
 }) {
   return (
-    <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow-sm relative overflow-hidden">
+    <div className="relative overflow-hidden">
       {/* Contenedor de los flags en la parte superior izquierda */}
       <div className="absolute top-2 left-2 flex flex-col gap-1">
         {/* Flag de descuento (si existe) */}
@@ -54,7 +54,7 @@ function ProductCard({
       </div>
 
       {/* Imagen del producto */}
-      <div className="w-full h-60 bg-gray-100 flex items-center justify-center">
+      <div className="w-full bg-gray-100 flex items-center justify-center">
         <img 
           src={imageSrc} 
           alt={name} 
@@ -63,9 +63,9 @@ function ProductCard({
       </div>
 
       {/* Sección de texto (nombre y precios) */}
-      <div className="p-4">
+      <div className="p-0">
         {/* Nombre del producto */}
-        <h2 className="text-gray-700 text-base font-medium mb-2">
+        <h2 className="text-gray-700 text-base font-medium mb-0">
           {name}
         </h2>
 

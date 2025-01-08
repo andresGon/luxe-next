@@ -3,6 +3,7 @@ import dbConnect from '../lib/dbConnect';
 import Producto from '../models/Producto';
 import ProductCard from '../components/ProductCard';
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 export default async function HomePage() {
   // 1) Conectar a la base de datos
@@ -39,6 +40,7 @@ export default async function HomePage() {
         );
       })}
     </main>
+    <Footer />
     </>
   );
 }
